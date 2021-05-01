@@ -24,14 +24,22 @@ public class Events  extends BaseClass {
         return sizeListWebElements(byCardsEvents);
     }
 
-    //получение количетсва карточек из закладки upcoming events
-    public void clickPastEvents() {
+    //клик на вкладку past events
+    public Events clickPastEvents() {
          click(getListWebElements(byTabEvents).get(1));
+         return this;
+    }
+    //клик на вкладку upcoming events
+    public void clickUpcomingEvents() {
+        click(getListWebElements(byTabEvents).get(0));
     }
 
     //получение карточки
-    public Card getCard(int i) {
+    public CardMini getCard(int i) {
         String cssCard =":nth-of-type(%d)";
-        return new Card(cssCards+String.format(cssCard,i));
+        return new CardMini(cssCards+String.format(cssCard,i));
     }
+
+
+
 }

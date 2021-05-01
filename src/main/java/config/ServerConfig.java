@@ -12,4 +12,7 @@ public interface ServerConfig  extends Config {
 
     @Key("passwors")
     String passwors();
+
+    @Key("locale")
+    String locale();
 }

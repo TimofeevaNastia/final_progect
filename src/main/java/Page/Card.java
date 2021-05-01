@@ -2,41 +2,35 @@ package Page;
 
 import Base.BaseClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Card  extends BaseClass {
+public class Card extends BaseClass {
+
     private final String cssLang= " .language"; // css названия языка
     private final String cssTitle= " h1"; // css заголовка карточки
     private final String cssDate= " .date"; // css даты карточки
     private final String cssStatus= " .status"; // css статуса карточки
     private final String cssSpeaker= " .evnt-speaker"; // css спикеров
-    private final String cssCard;
+    private final String cssCard=".evnt-card-wrapper";
+    private final String cssLocation=" .location";
+    private final String cssCategory=" .evnt-talk-topic";
 
-    public Card(String cssCard) {
-        this.cssCard=cssCard;
-    }
-    //получение сокращенного названия языка карточки
-    public String getLangCard() {
+    //получение названия языка карточки
+    public String getLang() {
         return getText(By.cssSelector(cssCard+cssLang));
     }
 
-    //получение заголовка карточки
-    public String getTitleCard() {
-        return getText(By.cssSelector(cssCard+cssTitle));
+    //получение местоположения проведения мероприятий
+    public String getLocation() {
+        return getText(By.cssSelector(cssLocation));
     }
 
-    //получение заголовка карточки
-    public String getDateCard() {
-        return getText(By.cssSelector(cssCard+cssDate));
+    //получение категории
+    public String getCategory() {
+        return getText(By.cssSelector(cssCategory));
     }
 
-    //получение статуса карточки
-    public String getStatusCard() {
-        return getText(By.cssSelector(cssCard+cssStatus));
-    }
-
-    //получение статуса карточки
-    public int getCountSpeakers() {
-        return getListWebElements(By.cssSelector(cssCard+cssSpeaker)).size();
-    }
 
 }

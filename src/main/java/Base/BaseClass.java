@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -49,6 +50,15 @@ public class BaseClass {
         driver.manage().window().maximize();
     }
 
+    @After
+    public void setDown()  {
+
+        if (driver != null) {
+            driver.quit();
+            logger.info("Драйвер закрыт");
+        }
+
+    }
     //ввод данных в поле (с предварительной очисткой), где text - вводимое значениее, by - локатор поля ввода
     public void setValue(String text, By by){
         WebElement element =  driver.findElement(by);
@@ -115,14 +125,17 @@ public class BaseClass {
         //return new ChromeDriver();
     }
 
-    @After
-    public void setDown()  {
-
-        if (driver != null) {
-            driver.quit();
-            logger.info("Драйвер закрыт");
-        }
-
+    //oжидание прогрузки страницы
+    public void waitLoadCard() {
+        boolean wait = (boolean) new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver arg0) {
+                boolean result = false;
+                if (getListWebElements(By.cssSelector(".evnt-global-loader")).size()==0)
+                    result=true;
+                return result;
+            }
+        });
     }
 
 }
