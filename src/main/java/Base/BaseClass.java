@@ -32,7 +32,7 @@ public class BaseClass {
 
     @Before
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         logger.info("Драйвер поднят");
         //если появляется капча
         //ChromeOptions options = new ChromeOptions();
