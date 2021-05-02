@@ -3,6 +3,7 @@ import Helper.DateEvents;
 import Page.CardMini;
 import Page.Events;
 import Page.Main;
+import io.qameta.allure.Epic;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -17,6 +18,7 @@ import static org.junit.Assert.assertTrue;
 public class ValidDateComingEventsTest extends BaseClass {
     private Boolean checkDate = false;
 
+    @Epic("Проверка дат предстоящих мероприятий")
     @Test
     public void validDateComingEventsTest() throws ParseException {
 

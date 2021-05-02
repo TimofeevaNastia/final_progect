@@ -1,6 +1,7 @@
 import Base.BaseClass;
 import Page.Events;
 import Page.Main;
+import io.qameta.allure.Epic;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,6 +11,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class LookComingEventsTest extends BaseClass {
 
+    @Epic("Проверка карточек предстоящих мероприятий")
     @Test
     public void lookComingEventsTest(){
         logger.info("Переход на вкладку Events");

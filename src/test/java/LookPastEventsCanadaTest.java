@@ -4,6 +4,7 @@ import Page.CardMini;
 import Page.Events;
 import Page.Filter;
 import Page.Main;
+import io.qameta.allure.Epic;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -19,6 +20,7 @@ public class LookPastEventsCanadaTest extends BaseClass {
     private final String country="Canada";
     private Boolean checkDate=false;
 
+    @Epic("Проверка карточек прошедших мероприятий в Канаде")
     @Test
     public void lookCardEventsTest() throws ParseException {
         logger.info("Переход на вкладку Events");

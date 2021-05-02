@@ -55,6 +55,7 @@ public class BaseClass {
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("browserVersion", "89.0");
         /// capabilities.setCapability("enableVNC",true);

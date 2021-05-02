@@ -2,6 +2,7 @@ import Base.BaseClass;
 import Page.CardMini;
 import Page.Events;
 import Page.Main;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Step;
 import org.junit.Test;
 
@@ -18,6 +19,7 @@ public class LookCardEventsTest extends BaseClass {
     private final String status = "Registration closed";
     private final int countSpeakers = 1;
 
+    @Epic("Проверка карточек мероприятий на закладке Events")
     @Test
     public void lookCardEventsTest(){
         logger.info("Переход на вкладку Events");

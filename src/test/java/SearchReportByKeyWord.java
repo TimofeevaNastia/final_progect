@@ -3,6 +3,7 @@ import Page.CardMini;
 import Page.Filter;
 import Page.Main;
 import Page.VideoTalksLibrary;
+import io.qameta.allure.Epic;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -13,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class SearchReportByKeyWord extends BaseClass {
     private final String searchText = "QA";
 
+    @Epic("Проверка поиска докладов по ключевому слову")
     @Test
     public void filterReportInCategoryTest() {
         logger.info("Переход на вкладку Video-Talks Library");
