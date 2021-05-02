@@ -7,12 +7,8 @@ public interface ServerConfig  extends Config {
     @Key("url")
     String url();
 
-    @Key("login")
-    String login();
+    @Key("urlHub")
+    String urlHub();
 
-    @Key("passwors")
-    String passwors();
 
-    @Key("locale")
-    String locale();
 }

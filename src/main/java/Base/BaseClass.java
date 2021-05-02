@@ -11,14 +11,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.IOException;
+
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
@@ -50,7 +48,7 @@ public class BaseClass {
 
     }
 
-    public static WebDriver initDriver() {
+    public WebDriver initDriver() {
         URL url;
         RemoteWebDriver rd;
         // url= new URL("https://127.0.0.1:4444/wd/hub");
@@ -62,7 +60,7 @@ public class BaseClass {
         /// capabilities.setCapability("enableVNC",true);
         // capabilities.setCapability("enableVideo",true);
         try {
-            rd = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
+            rd = new RemoteWebDriver(URI.create(cfg.urlHub()).toURL(), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
