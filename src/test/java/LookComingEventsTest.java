@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class LookComingEventsTest extends BaseClass {
 
-    @Epic("Проверка карточек предстоящих мероприятий")
+    @Epic("Checking cards for upcoming events")
     @Test
     public void lookComingEventsTest(){
         logger.info("Переход на вкладку Events");

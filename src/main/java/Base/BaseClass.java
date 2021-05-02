@@ -56,12 +56,12 @@ public class BaseClass {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "89.0");
+        //capabilities.setCapability("browserName", "chrome");
+        //capabilities.setCapability("browserVersion", "89.0");
         /// capabilities.setCapability("enableVNC",true);
         // capabilities.setCapability("enableVideo",true);
         try {
-            rd = new RemoteWebDriver(URI.create(cfg.urlHub()).toURL(), capabilities);
+            rd = new RemoteWebDriver(URI.create(cfg.urlHub()).toURL(),capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

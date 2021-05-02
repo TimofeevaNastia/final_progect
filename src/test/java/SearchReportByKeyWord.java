@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class SearchReportByKeyWord extends BaseClass {
     private final String searchText = "QA";
 
-    @Epic("Проверка поиска докладов по ключевому слову")
+    @Epic("Checking the search for reports by keyword")
     @Test
     public void filterReportInCategoryTest() {
         logger.info("Переход на вкладку Video-Talks Library");

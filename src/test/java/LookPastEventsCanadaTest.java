@@ -20,7 +20,7 @@ public class LookPastEventsCanadaTest extends BaseClass {
     private final String country="Canada";
     private Boolean checkDate=false;
 
-    @Epic("Проверка карточек прошедших мероприятий в Канаде")
+    @Epic("Checking cards of past events in Canada")
     @Test
     public void lookCardEventsTest() throws ParseException {
         logger.info("Переход на вкладку Events");

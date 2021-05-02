@@ -15,7 +15,7 @@ public class FilterReportInCategoryTest  extends BaseClass {
     private final String location="Belarus";
     private final String language="ENGLISH";
 
-    @Epic("Проверка фильтрации докладов по категориям")
+    @Epic("Filtering reports by categories")
     @Test
     public void filterReportInCategoryTest() {
         logger.info("Переход на вкладку Video-Talks Library");

@@ -18,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 public class ValidDateComingEventsTest extends BaseClass {
     private Boolean checkDate = false;
 
-    @Epic("Проверка дат предстоящих мероприятий")
+    @Epic("Checking the dates of upcoming events")
     @Test
     public void validDateComingEventsTest() throws ParseException {
 
