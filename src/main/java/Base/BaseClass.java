@@ -40,16 +40,36 @@ public class BaseClass {
         //ChromeOptions options = new ChromeOptions();
         //options.addArguments("user-data-dir=~AppData\\Local\\Google\\Chrome\\User Data");
         //options.addArguments("--profile-directory=Default");
-        driver = new ChromeDriver();
-
         //driver = new ChromeDriver();
-      /*  driver =initDriver();
-       */
+
+        driver =initDriver();
+
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(cfg.url());
         driver.manage().window().maximize();
+
     }
 
+    public static WebDriver initDriver() {
+        URL url;
+        RemoteWebDriver rd;
+        // url= new URL("https://127.0.0.1:4444/wd/hub");
+
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("browserVersion", "89.0");
+        /// capabilities.setCapability("enableVNC",true);
+        // capabilities.setCapability("enableVideo",true);
+        try {
+            rd = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+        return rd;
+        //WebDriverManager.chromedriver().setup();
+        //return new ChromeDriver();
+    }
     @After
     public void setDown()  {
 
@@ -103,26 +123,6 @@ public class BaseClass {
     public void click(WebElement element){
         WebElement element2 = new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until(elementToBeClickable(element));
         element2.click();
-    }
-    public static WebDriver initDriver() {
-        URL url;
-        RemoteWebDriver rd;
-        // url= new URL("https://127.0.0.1:4444/wd/hub");
-
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "89.0");
-        /// capabilities.setCapability("enableVNC",true);
-        // capabilities.setCapability("enableVideo",true);
-        try {
-            rd = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-        return rd;
-        //WebDriverManager.chromedriver().setup();
-        //return new ChromeDriver();
     }
 
     //oжидание прогрузки страницы

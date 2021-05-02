@@ -2,6 +2,7 @@ import Base.BaseClass;
 import Page.CardMini;
 import Page.Events;
 import Page.Main;
+import io.qameta.allure.Step;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

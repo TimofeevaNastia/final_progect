@@ -1,5 +1,6 @@
 import Base.BaseClass;
 import Page.*;
+import io.qameta.allure.Step;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -12,6 +13,7 @@ public class FilterReportInCategoryTest  extends BaseClass {
     private final String category="Testing";
     private final String location="Belarus";
     private final String language="ENGLISH";
+
     @Test
     public void filterReportInCategoryTest() {
         logger.info("Переход на вкладку Video-Talks Library");
