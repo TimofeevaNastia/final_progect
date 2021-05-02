@@ -55,13 +55,15 @@ public class BaseClass {
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
+        capabilities.setBrowserName(System.getProperty("browser_name"));
+        capabilities.setVersion(System.getProperty("browser_version"));
         //capabilities.setCapability("browserName", "chrome");
         //capabilities.setCapability("browserVersion", "89.0");
         /// capabilities.setCapability("enableVNC",true);
         // capabilities.setCapability("enableVideo",true);
         try {
             rd = new RemoteWebDriver(URI.create(cfg.urlHub()).toURL(),capabilities);
+
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
