@@ -95,8 +95,8 @@
                             <value>${project.build.directory}/allure-results</value>
                         </property>
                     </systemProperties>
-                    <!-- <parallel>tests</parallel>  Способ запуска параллельности
-                   <threadCount>2</threadCount> -->
+                    <parallel>all</parallel>
+                   <threadCount>1</threadCount>
                 </configuration>
                 <dependencies>
                     <dependency>
