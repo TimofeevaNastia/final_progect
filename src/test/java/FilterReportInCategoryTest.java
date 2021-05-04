@@ -2,6 +2,7 @@ import Base.BaseClass;
 import Page.*;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -13,6 +14,7 @@ public class FilterReportInCategoryTest  extends BaseClass {
     private final String category="Testing";
     private final String location="Belarus";
     private final String language="ENGLISH";
+
 
     @Epic("Filtering reports by categories")
     @Test
