@@ -1,12 +1,11 @@
 package Base;
 
 import config.ServerConfig;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -30,37 +28,24 @@ public class BaseClass {
     public Logger logger = LogManager.getLogger(BaseClass.class);
     public ServerConfig cfg = ConfigFactory.create(ServerConfig.class);
 
-    @Before
+    @BeforeEach
     public void setUp() {
         //WebDriverManager.chromedriver().setup();
         logger.info("Драйвер поднят");
-        //если появляется капча
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("user-data-dir=~AppData\\Local\\Google\\Chrome\\User Data");
-        //options.addArguments("--profile-directory=Default");
-        //driver = new ChromeDriver();
 
         driver =initDriver();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(cfg.url());
         driver.manage().window().maximize();
-
     }
 
     public WebDriver initDriver() {
-        URL url;
         RemoteWebDriver rd;
-        // url= new URL("https://127.0.0.1:4444/wd/hub");
-
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName(System.getProperty("browser_name"));
         capabilities.setVersion(System.getProperty("browser_version"));
-        //capabilities.setCapability("browserName", "chrome");
-        //capabilities.setCapability("browserVersion", "89.0");
-        /// capabilities.setCapability("enableVNC",true);
-        // capabilities.setCapability("enableVideo",true);
         try {
             rd = new RemoteWebDriver(URI.create(cfg.urlHub()).toURL(),capabilities);
 
@@ -68,10 +53,8 @@ public class BaseClass {
             throw new RuntimeException(e);
         }
         return rd;
-        //WebDriverManager.chromedriver().setup();
-        //return new ChromeDriver();
     }
-    @After
+    @AfterEach
     public void setDown()  {
 
         if (driver != null) {
@@ -89,17 +72,6 @@ public class BaseClass {
 
     }
 
-    //Выбор значения из выпадающего списка, где field - раскрытие выпадащего списка, data - выбор значения в выпадающем списке
-    public void setValueSelect(By field,By data){
-        click(field);
-        click(data);
-    }
-
-    //получение значения атрибута value
-    public String getAttributeValue(By by){
-        return driver.findElement(by).getAttribute("value");
-
-    }
     //получение текста элемента
     public String getText(By by){
         return driver.findElement(by).getText();
@@ -126,7 +98,7 @@ public class BaseClass {
         element2.click();
     }
 
-    //oжидание прогрузки страницы
+    //ожидание прогрузки страницы
     public void waitLoadCard() {
         boolean wait = (boolean) new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
             @Override

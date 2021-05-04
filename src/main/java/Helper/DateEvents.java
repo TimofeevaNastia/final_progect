@@ -1,8 +1,5 @@
 package Helper;
 
-import Base.BaseClass;
-import config.ServerConfig;
-import org.aeonbits.owner.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,17 +9,17 @@ import java.util.Date;
 import java.util.Locale;
 
 /*
- * Вспомогательный клас для преобразования строковой даты проведения мероприятия к типу  Date
+ * Вспомогательный класс для преобразования строковой даты проведения мероприятия к типу  Date
  */
 public class DateEvents {
-    private Logger logger = LogManager.getLogger(DateEvents.class);
-    private String dateSEventsString;
-    private String[] date;
-    private String dayBegin="";
-    private String monthBegin="";
-    private String dayEnd="";
-    private String monthEnd="";
-    private String year="";
+    private final Logger logger = LogManager.getLogger(DateEvents.class);
+    private final String dateSEventsString;
+    private final String[] date;
+    private final String dayBegin;
+    private final String monthBegin;
+    private final String dayEnd;
+    private final String monthEnd;
+    private final String year;
     private final String[] dateBegin;
     private final String[] dateEnd;
 

@@ -2,9 +2,10 @@ import Base.BaseClass;
 import Page.Events;
 import Page.Main;
 import io.qameta.allure.Epic;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /*
  * Просмотр предстоящих мероприятий

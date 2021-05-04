@@ -2,17 +2,10 @@ package Page;
 
 import Base.BaseClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Card extends BaseClass {
 
     private final String cssLang= " .language"; // css названия языка
-    private final String cssTitle= " h1"; // css заголовка карточки
-    private final String cssDate= " .date"; // css даты карточки
-    private final String cssStatus= " .status"; // css статуса карточки
-    private final String cssSpeaker= " .evnt-speaker"; // css спикеров
     private final String cssCard=".evnt-card-wrapper";
     private final String cssLocation=" .location";
     private final String cssCategory=" .evnt-talk-topic";

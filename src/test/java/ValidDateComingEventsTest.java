@@ -4,12 +4,14 @@ import Page.CardMini;
 import Page.Events;
 import Page.Main;
 import io.qameta.allure.Epic;
-import org.junit.Test;
 
 import java.text.ParseException;
 import java.util.Date;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 /*
  * Валидация дат предстоящих мероприятий

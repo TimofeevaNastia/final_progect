@@ -13,7 +13,10 @@
         <maven.compiler.target>9</maven.compiler.target>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
-        <allure-junit4.version>2.13.9</allure-junit4.version>
+        <allure-junit5.version>2.13.9</allure-junit5.version>
+        <junit.version>5.8.0-M1</junit.version>
+
+        <junit.platform.version>1.8.0-M1</junit.platform.version>
     </properties>
     <repositories>
         <repository>
@@ -32,12 +35,6 @@
             <groupId>com.epam.healenium</groupId>
             <artifactId>healenium-web</artifactId>
             <version>3.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -66,15 +63,50 @@
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit4</artifactId>
-            <version>${allure-junit4.version}</version>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure-junit5.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>1.8.0-M1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junit.platform.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit.platform.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junit.platform.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -86,7 +118,7 @@
                     <properties>
                         <property>
                             <name>listener</name>
-                            <value>io.qameta.allure.junit4.AllureJunit4</value>
+                            <value>io.qameta.allure.junit5.AllureJunit5</value>
                         </property>
                     </properties>
                     <systemProperties>

@@ -2,10 +2,9 @@ package Page;
 
 import Base.BaseClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class Filter extends BaseClass {
-    private final String cssSelectCountryInLocation="[data-value='%s']";
+    private final String cssSelect="[data-value='%s']";
     private final By byLocation= By.id("filter_location");
     private final By byMoreFilters= By.cssSelector(".show-more");
     private final By byCategory= By.id("filter_category");
@@ -32,14 +31,16 @@ public class Filter extends BaseClass {
         click(byLanguage);
         return this;
     }
-    // выбор из списка
-    public Filter select(String text) {
-        click(By.cssSelector(String.format(cssSelectCountryInLocation,text)));
+    //Выбор из списка
+    public  Filter select(String value){
+        String css=String.format(cssSelect,value);
+        click(By.cssSelector(css));
         return this;
     }
-    // ввод в поле поиска
-    public Filter inputSearchField(String text) {
-        setValue(text, byInputSearch);
+
+    //Ввод в поле поиска
+    public  Filter inputSearchField(String value){
+        setValue(value,byInputSearch);
         return this;
     }
 
