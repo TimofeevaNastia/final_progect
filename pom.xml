@@ -128,7 +128,7 @@
                         </property>
                     </systemProperties>
                     <parallel>all</parallel>
-                   <threadCount>1</threadCount>
+                   <threadCount>2</threadCount>
                 </configuration>
                 <dependencies>
                     <dependency>
