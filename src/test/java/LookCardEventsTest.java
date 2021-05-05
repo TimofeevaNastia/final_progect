@@ -4,6 +4,8 @@ import Page.Events;
 import Page.Main;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -12,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /*
  * Просмотр карточек мероприятий
  */
+@Execution(ExecutionMode.CONCURRENT)
 public class LookCardEventsTest extends BaseClass {
     private final String lang = "Ru";
     private final String title = "DevOps Architecture Webinar";

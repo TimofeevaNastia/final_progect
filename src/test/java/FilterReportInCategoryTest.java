@@ -2,6 +2,8 @@ import Base.BaseClass;
 import Page.*;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.platform.runner.JUnitPlatform;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /*
  * Фильтрация докладов по категориям
  */
+@Execution(ExecutionMode.CONCURRENT)
 public class FilterReportInCategoryTest  extends BaseClass {
     private final String category="Testing";
     private final String location="Belarus";

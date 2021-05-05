@@ -9,6 +9,8 @@ import java.text.ParseException;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -16,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /*
  * Валидация дат предстоящих мероприятий
  */
-
+@Execution(ExecutionMode.CONCURRENT)
 public class ValidDateComingEventsTest extends BaseClass {
     private Boolean checkDate = false;
 

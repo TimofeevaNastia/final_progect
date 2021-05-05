@@ -3,6 +3,8 @@ import Page.Events;
 import Page.Main;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /*
  * Просмотр предстоящих мероприятий
  */
+@Execution(ExecutionMode.CONCURRENT)
 public class LookComingEventsTest extends BaseClass {
 
     @Epic("Checking cards for upcoming events")

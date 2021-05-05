@@ -10,6 +10,8 @@ import java.text.ParseException;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -18,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /*
  * Просмотр прошедших мероприятий в Канаде
  */
+@Execution(ExecutionMode.CONCURRENT)
 public class LookPastEventsCanadaTest extends BaseClass {
     private final String country="Canada";
     private Boolean checkDate=false;

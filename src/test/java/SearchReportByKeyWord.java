@@ -5,6 +5,8 @@ import Page.Main;
 import Page.VideoTalksLibrary;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /*
  * Поиск докладов по ключевому слову
  */
+@Execution(ExecutionMode.CONCURRENT)
 public class SearchReportByKeyWord extends BaseClass {
     private final String searchText = "QA";
 
