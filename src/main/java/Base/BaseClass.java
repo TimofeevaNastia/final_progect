@@ -32,14 +32,14 @@ public class BaseClass {
 
     @BeforeEach
     public void setUp() {
-        //WebDriverManager.chromedriver().setup();
         logger.info("Драйвер поднят");
+        //WebDriverManager.chromedriver().setup();
         //driver=new ChromeDriver();
         driver =initDriver();
-
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(cfg.url());
-        driver.manage().window().maximize();
+
     }
 
     public WebDriver initDriver() {

@@ -23,7 +23,7 @@ public class LookCardEventsTest extends BaseClass {
     private final int countSpeakers = 1;
 
     @Epic("Checking event cards on the Events tab")
-    @Test
+    //@Test
     public void lookCardEventsTest(){
         logger.info("Переход на вкладку Events");
         Events events = new Main(driver).tabEvents() ;

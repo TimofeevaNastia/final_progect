@@ -24,9 +24,10 @@ public class ValidDateComingEventsTest extends BaseClass {
 
     @Epic("Checking the dates of upcoming events")
     @Test
-    public void validDateComingEventsTest() throws ParseException {
+    public void validDateComingEventsTest() throws ParseException, InterruptedException {
 
         logger.info("Переход на вкладку Events");
+        Thread.sleep(5000);
         Events events = new Main(driver).tabEvents();
         logger.info("Переход на вкладку Past Events");
         events.clickUpcomingEvents();
