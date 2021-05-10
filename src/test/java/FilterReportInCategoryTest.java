@@ -31,6 +31,7 @@ public class FilterReportInCategoryTest  extends BaseClass {
 
         logger.info("Выбор Category");
         filter.clickCategory().select(category);
+        waitLoadCard();
 
         logger.info("Выбор Location");
         filter.clickLocation().select(location);
