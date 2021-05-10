@@ -15,28 +15,12 @@
         <aspectj.version>1.9.6</aspectj.version>
         <allure-junit5.version>2.13.9</allure-junit5.version>
         <junit.version>5.4.0</junit.version>
-
-
         <junit.platform.version>1.8.0-M1</junit.platform.version>
     </properties>
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-epam-healenium</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/epam/healenium</url>
-        </repository>
-    </repositories>
+
 
 
     <dependencies>
-        <dependency>
-            <groupId>com.epam.healenium</groupId>
-            <artifactId>healenium-web</artifactId>
-            <version>3.0.2</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
