@@ -38,7 +38,7 @@ public class LookPastEventsCanadaTest extends BaseClass {
         new Filter().clickLocation()
                 .select(country);
         //ожидание прогрузки карточек
-        events.waitLoadCard();
+        waitLoadCard();
 
         logger.info("Проверка, что совпадает количетсво карточек, которое отображено, с количеством, указанным на вкладке Past Events");
         Integer c1=events.countCardsEvents();

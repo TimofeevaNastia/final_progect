@@ -35,6 +35,7 @@ public class FilterReportInCategoryTest  extends BaseClass {
 
         logger.info("Выбор Location");
         filter.clickLocation().select(location);
+        waitLoadCard();
 
         logger.info("Выбор Language ");
         filter.clickLanguage().select(language);
