@@ -102,14 +102,11 @@ public class BaseClass {
 
     //ожидание прогрузки страницы
     public void waitLoadCard() {
-        boolean wait = (boolean) new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
-            @Override
-            public Boolean apply(WebDriver arg0) {
-                boolean result = false;
-                if (getListWebElements(By.cssSelector(".evnt-global-loader")).size()==0)
-                    result=true;
-                return result;
-            }
+        new WebDriverWait(driver, 10).until((ExpectedCondition<Boolean>) arg0 -> {
+            boolean result = false;
+            if (getListWebElements(By.cssSelector(".evnt-global-loader")).size()==0)
+                result=true;
+            return result;
         });
     }
 

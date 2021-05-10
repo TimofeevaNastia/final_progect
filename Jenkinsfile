@@ -17,7 +17,7 @@ pipeline {
         string(name: 'GIT_URL', defaultValue: 'https://github.com/TimofeevaNastia/final_progect.git', description: 'The target git url')
         string(name: 'GIT_BRANCH', defaultValue: 'master', description: 'The target git branch')
         choice(name: 'BROWSER_NAME', choices: ['chrome', 'firefox'], description: 'Pick the target browser in Selenoid')
-        choice(name: 'BROWSER_VERSION', choices: ['89.0', '88.0', '78.0'], description: 'Pick the target browser version in Selenoid')
+        choice(name: 'BROWSER_VERSION', choices: ['89.0', '88.0','86.0','78.0'], description: 'Pick the target browser version in Selenoid')
     }
     stages {
    stage('Pull from GitHub') {

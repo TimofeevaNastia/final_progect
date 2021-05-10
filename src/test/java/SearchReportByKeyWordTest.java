@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Поиск докладов по ключевому слову
  */
 @Execution(ExecutionMode.CONCURRENT)
-public class SearchReportByKeyWord extends BaseClass {
+public class SearchReportByKeyWordTest extends BaseClass {
     private final String searchText = "QA";
 
     @Epic("Checking the search for reports by keyword")

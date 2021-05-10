@@ -50,12 +50,12 @@ public class DateEvents {
     }
 
     public Date getDateBegin() throws ParseException {
-        logger.info("Дата начала проведения мероприятия: "+dayBegin+" "+monthBegin+" "+year);
+        logger.info("Дата начала проведения мероприятия: {} {} {}",dayBegin, monthBegin, year);
         return new SimpleDateFormat("d MMM yyyy", Locale.US).parse(dayBegin+" "+monthBegin+" "+year);
     }
 
     public Date getDateEnd() throws ParseException {
-        logger.info("Дата окончания проведения мероприятия: "+dayEnd+" "+monthEnd+" "+year);
+        logger.info("Дата окончания проведения мероприятия: {} {} {}",dayEnd,monthEnd,year);
 
         return new SimpleDateFormat("d MMM yyyy", Locale.US).parse(dayEnd+" "+monthEnd+" "+year);
     }
