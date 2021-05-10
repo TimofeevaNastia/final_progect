@@ -51,10 +51,8 @@ pipeline {
                       // Текст оповещения
                       def message = "${currentBuild.currentResult}: Job ${env.JOB_NAME}, build ${env.BUILD_NUMBER}, branch ${branch}\nTest Summary - ${summary.totalCount}, Failures: ${summary.failCount}, Skipped: ${summary.skipCount}, Passed: ${summary.passCount}\nMore info at: ${env.BUILD_URL}"
                       if (currentBuild.currentResult == 'SUCCESS') {
-                      step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "anasok1997@gmail.com", sendToIndividuals: true])
                       slackSend(message: "Notification from Jenkins Pipeline: "+ message)
                       } else {
-                     step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "anasok1997@gmail.com", sendToIndividuals: true])
                       slackSend(message: "Notification from Jenkins Pipeline: "+ message)
                       }
 
@@ -69,8 +67,7 @@ pipeline {
                     ])
                     println('allure report created')
                     // Текст оповещения
-                    //def message = "${currentBuild.currentResult}: Job ${env.JOB_NAME}, build ${env.BUILD_NUMBER}, branch ${branch}\nTest Summary - ${summary.totalCount}, Failures: ${summary.failCount}, Skipped: ${summary.skipCount}, Passed: ${summary.passCount}\nMore info at: ${env.BUILD_URL}"
-                    println("message= " + message)
+                       println("message= " + message)
                   }
 
                 }
