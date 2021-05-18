@@ -19,7 +19,7 @@ public class SearchReportByKeyWordTest extends BaseClass {
     private final String searchText = "QA";
 
     @Epic("Checking the search for reports by keyword")
-    @Test
+    //@Test
     public void searchReportByKeyWord() {
         logger.info("Переход на вкладку Video-Talks Library");
         VideoTalksLibrary talksLibrary = new Main(driver).tabVideo();

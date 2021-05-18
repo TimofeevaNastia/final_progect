@@ -22,7 +22,7 @@ public class LookCardEventsTest extends BaseClass {
     private final String status = "Registration closed";
     private final int countSpeakers = 1;
 
-    @Epic("Checking event cards on the Events tab")
+    @Epic("Проверка карточек на закладке Events")
     @Test
     public void lookCardEventsTest(){
         logger.info("Переход на вкладку Events");

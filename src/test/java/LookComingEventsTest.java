@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LookComingEventsTest extends BaseClass {
 
     @Epic("Checking cards for upcoming events")
-    @Test
+    //@Test
     public void lookComingEventsTest(){
         logger.info("Переход на вкладку Events");
         Events events = new Main(driver).tabEvents();

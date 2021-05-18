@@ -26,7 +26,7 @@ public class LookPastEventsCanadaTest extends BaseClass {
     private Boolean checkDate=false;
 
     @Epic("Checking cards of past events in Canada")
-    @Test
+    //@Test
     public void lookPastEventsCanadaTest() throws ParseException {
         logger.info("Переход на вкладку Events");
         Events events = new Main(driver).tabEvents();

@@ -20,7 +20,7 @@ public class FilterReportInCategoryTest  extends BaseClass {
 
 
     @Epic("Filtering reports by categories")
-    @Test
+    //@Test
     public void filterReportInCategoryTest() {
         logger.info("Переход на вкладку Video-Talks Library");
         VideoTalksLibrary talksLibrary = new Main(driver).tabVideo() ;

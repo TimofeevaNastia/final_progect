@@ -23,7 +23,7 @@ public class ValidDateComingEventsTest extends BaseClass {
     private Boolean checkDate = false;
 
     @Epic("Checking the dates of upcoming events")
-    @Test
+    //@Test
     public void validDateComingEventsTest() throws ParseException, InterruptedException {
 
         logger.info("Переход на вкладку Events");
